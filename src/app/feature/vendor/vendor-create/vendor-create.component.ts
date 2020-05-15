@@ -5,7 +5,7 @@ import { Vendor } from 'src/app/model/vendor.class';
 
 @Component({
   selector: 'app-vendor-create',
-  templateUrl: './vendor-create.component.html',
+  templateUrl: '../vendor-maint-component/vendor-maint-component.html',
   styleUrls: ['./vendor-create.component.css']
 })
 export class VendorCreateComponent implements OnInit {

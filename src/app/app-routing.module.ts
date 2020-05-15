@@ -12,11 +12,17 @@ import { ProductListComponent } from './feature/product/product-list/product-lis
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { HomeComponent } from './core/home/home.component';
+import { WelcomeComponent } from './feature/welcome/welcome.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: UserListComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent}, 
+  {path: 'welcome', component: WelcomeComponent}, 
+  {path: 'user/login', component: UserLoginComponent},
   {path: 'user/list', component: UserListComponent},
   {path: 'user/create', component: UserCreateComponent},
   {path: 'user/detail/:id', component: UserDetailComponent},
@@ -29,6 +35,7 @@ const routes: Routes = [
   {path: 'product/create', component: ProductCreateComponent},
   {path: 'product/detail/:id', component: ProductDetailComponent},
   {path: 'product/edit/:id', component: ProductEditComponent},
+  {path: '**', component: HomeComponent}
 ];
 
 @NgModule({

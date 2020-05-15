@@ -22,6 +22,7 @@ export class ProductService {
     return this.http.get(url+id) as Observable<JsonResponse>;
   } 
   create(product: Product): Observable<JsonResponse> {
+    console.log("product create", product)
     return this.http.post(url,product) as Observable<JsonResponse>;
   } 
   edit(product: Product): Observable<JsonResponse> {

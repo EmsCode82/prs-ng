@@ -21,6 +21,10 @@ import { ProductEditComponent } from './feature/product/product-edit/product-edi
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { HomeComponent } from './core/home/home.component';
 import { WelcomeComponent } from './feature/welcome/welcome.component';
+import { RequestListComponent } from './feature/request/request-list/request-list.component';
+import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
+import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
+import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { WelcomeComponent } from './feature/welcome/welcome.component';
     ProductEditComponent,
     UserLoginComponent,
     HomeComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    RequestListComponent,
+    RequestDetailComponent,
+    RequestCreateComponent,
+    RequestEditComponent
   ],
   imports: [
     BrowserModule,

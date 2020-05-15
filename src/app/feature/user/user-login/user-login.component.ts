@@ -25,7 +25,7 @@ export class UserLoginComponent implements OnInit {
       this.sysSvc.loggedInUser = null;
   }
 
-  login() {
+ login() {
     console.log("login called for user:", this.user);
     this.userSvc.login(this.user).subscribe(jr => {
       console.log("jr:", jr);

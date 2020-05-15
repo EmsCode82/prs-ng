@@ -33,7 +33,7 @@ export class UserDetailComponent implements OnInit {
       else {
         console.log('***Error deleting user.***', this.userId, jr.errors);
       }
-    })
+    });
   }
 
 }

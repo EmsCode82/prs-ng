@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems = [
-      new MenuItem("Home","/home","Home Page"),
+      new MenuItem("PRS","/home","Purchase Request System"),
       new MenuItem("Welcome","/welcome","Welcome Page"),
       new MenuItem("Login","/user/login","Login"),
       new MenuItem("User","/user/list","User List"),

@@ -1,0 +1,56 @@
+<div *ngIf='request' class="component">
+    <section class='heading'>
+        <span class='page-title font-weight-bold font-italic'>[{{title}}]</span>
+        <span> | <a routerLink="/request/list">Return to List</a></span>
+    </section>
+    <main class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>Request Id</td>
+                <td>Description</td>
+                <td>Status</td>
+                <td>Total</td>
+            </tr>
+            <tr>
+                <td>{{request.id}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total}}</td>
+            </tr>
+        </table>
+    </main>
+    </div>
+    <section class='heading'>
+        <span class='page-title font-weight-bold font-italic'>[{{title2}}]</span>
+        <span>
+            <a routerLink='/line-item/create'>
+                <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+            </a>
+        </span>
+    </section>
+    <table *ngIf='request' class="table table=sm table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Line Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <p *ngIf='!lineitems'>No line items yet. Please create a new one!</p>
+            <tr *ngFor='let lineitem of lineitems'>
+                <td>{{lineitem.id}}</td>
+                <td>{{lineitem.product.name}}</td>
+                <td>{{lineitem.quantity}}</td>
+                <td>{{lineitem.product.price}}</td>
+                <td>{{request.id}}</td>
+                <td>{{request.id}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+        
+    

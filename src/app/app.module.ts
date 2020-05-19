@@ -25,6 +25,8 @@ import { RequestListComponent } from './feature/request/request-list/request-lis
 import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
+import { LineItemCreateComponent } from './feature/line-item/line-item-create/line-item-create.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,11 @@ import { RequestEditComponent } from './feature/request/request-edit/request-edi
     RequestListComponent,
     RequestDetailComponent,
     RequestCreateComponent,
-    RequestEditComponent
+    RequestEditComponent,
+    RequestLinesComponent,
+    LineItemCreateComponent,
+    
+    
   ],
   imports: [
     BrowserModule,

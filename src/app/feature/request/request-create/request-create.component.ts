@@ -3,6 +3,7 @@ import { RequestService } from 'src/app/service/request.service';
 import { Router } from '@angular/router';
 import { Request } from 'src/app/model/request.class';
 import { SystemService } from 'src/app/service/system.service';
+import { User } from 'src/app/model/user.class';
 
 @Component({
   selector: 'app-vendor-create',
@@ -13,13 +14,17 @@ export class RequestCreateComponent implements OnInit {
     title: string = "Request-Create";
     request: Request = new Request();
     submitBtnTitle: string = "Create";
+    users: User[] = [];
+    user: User;
 
   constructor(private requestSvc: RequestService,
               private router: Router,
               private sysSvc: SystemService) { }
 
   ngOnInit(): void {
+    this.sysSvc.checkLogin();
     this.request.user = this.sysSvc.loggedInUser;
+    console.log("logged in user", this.request.user);
   }
   
   save() {

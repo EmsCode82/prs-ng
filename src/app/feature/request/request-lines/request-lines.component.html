@@ -19,11 +19,11 @@
             </tr>
         </table>
     </main>
-    </div>
+
     <section class='heading'>
         <span class='page-title font-weight-bold font-italic'>[{{title2}}]</span>
         <span>
-            <a routerLink='/line-item/create'>
+            <a routerLink="/line-item/create/{{request.id}}">
                 <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
             </a>
         </span>
@@ -46,11 +46,10 @@
                 <td>{{lineitem.product.name}}</td>
                 <td>{{lineitem.quantity}}</td>
                 <td>{{lineitem.product.price}}</td>
-                <td>{{request.id}}</td>
-                <td>{{request.id}}</td>
+                <td>{{lineitem.product.price * lineitem.quantity}}</td>                
             </tr>
         </tbody>
 
     </table>
         
-    
+</div> 

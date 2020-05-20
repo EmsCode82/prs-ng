@@ -12,8 +12,8 @@ import { User } from 'src/app/model/user.class';
 })
 export class RequestCreateComponent implements OnInit {
     title: string = "Request-Create";
-    request: Request = new Request();
     submitBtnTitle: string = "Create";
+    request: Request = new Request();
     users: User[] = [];
     user: User;
 

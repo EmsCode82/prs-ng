@@ -10,28 +10,28 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-line-item-create',
-  templateUrl: './line-item-create.component.html',
-  styleUrls: ['./line-item-create.component.css']
+  selector: 'app-line-item-edit',
+  templateUrl: './line-item-edit.component.html',
+  styleUrls: ['./line-item-edit.component.css']
 })
-export class LineItemCreateComponent implements OnInit {
-  title: string = "Purchase Request Line Item Create";
+export class LineItemEditComponent implements OnInit {
+  title: string = "Purchase Request Line Item Edit";
   request: Request = null;
   requestId: number;
   products: Product [] = [];
-  lineitem: LineItem = new LineItem();  
+  lineitem: LineItem = new LineItem();
   quantity: number;
-  
+
 
   constructor(private productSvc: ProductService,
-              private lineitemSvc: LineItemService,
-              private requestSvc: RequestService,             
-              private router: Router,
-              private route: ActivatedRoute) { }
+    private lineitemSvc: LineItemService,
+    private requestSvc: RequestService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.productSvc.list().subscribe(jr => {
-      this.products = jr.data as Product [];
+      this.products = jr.data as Product[];
     });
     this.route.params.subscribe(parms => this.requestId = parms['id']);
     this.requestSvc.get(this.requestId).subscribe(jr => {
@@ -40,15 +40,14 @@ export class LineItemCreateComponent implements OnInit {
     });
   }
   save() {
-    this.lineitemSvc.create(this.lineitem).subscribe(jr => {
+    this.lineitemSvc.edit(this.lineitem).subscribe(jr => {
       if (jr.errors == null) {
-        this.router.navigateByUrl("/request/request-lines/"+this.requestId);
-        console.log("Line Item Created!", this.lineitem)
+        this.router.navigateByUrl("/request/request-lines/"+ this.requestId);
+        console.log("Line Item Updated", this.lineitem)
       }
       else {
-        console.log("*** Error creating new Line Item", this.lineitem, jr.errors);
+        console.log("*** Error updating Line Item", this.lineitem, jr.errors);
       }
     });
-
-}
+  }
 }

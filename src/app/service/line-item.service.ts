@@ -23,6 +23,7 @@ export class LineItemService {
     return this.http.post(url,lineitem) as Observable<JsonResponse>;
   } 
   edit(lineitem: LineItem): Observable<JsonResponse> {
+    console.log("lineitem edit",lineitem)
     return this.http.put(url,lineitem) as Observable<JsonResponse>;
   } 
   delete(id: number): Observable<JsonResponse> {

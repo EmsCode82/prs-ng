@@ -1,0 +1,25 @@
+<section class='heading'>
+    <span class='page-title font-weight-bold font-italic'>[{{title}}]</span>
+    <span> | <a routerLink="/request/request-lines/{{requestId}}">Return to List</a></span>
+  </section>
+  <main class="single">
+    <table class="table table-sm">
+      <tr>
+        <td>Product:</td>
+        <td>
+          <select [(ngModel)]="lineitem.product" class="rounded">
+            <option *ngFor="let product of products" [ngValue]='product'>{{product.name}}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Quantity:</td>
+        <td>
+          <input [(ngModel)]="lineitem.quantity" class="rounded" type="number" />
+        </td>
+      </tr>
+    </table>
+  </main>
+  <span>
+    <button (click)="save()" class="btn btn-sm btn-primary">Update</button>
+  </span>

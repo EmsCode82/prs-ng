@@ -27,11 +27,15 @@ import { RequestCreateComponent } from './feature/request/request-create/request
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 import { LineItemCreateComponent } from './feature/line-item/line-item-create/line-item-create.component';
+import { LineItemEditComponent } from './feature/line-item/line-item-edit/line-item-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    HomeComponent,
+    WelcomeComponent,
+    UserLoginComponent,
     UserListComponent,
     UserDetailComponent,
     UserCreateComponent,
@@ -44,15 +48,13 @@ import { LineItemCreateComponent } from './feature/line-item/line-item-create/li
     ProductDetailComponent,
     ProductCreateComponent,
     ProductEditComponent,
-    UserLoginComponent,
-    HomeComponent,
-    WelcomeComponent,
     RequestListComponent,
     RequestDetailComponent,
     RequestCreateComponent,
     RequestEditComponent,
     RequestLinesComponent,
     LineItemCreateComponent,
+    LineItemEditComponent,
     
     
   ],

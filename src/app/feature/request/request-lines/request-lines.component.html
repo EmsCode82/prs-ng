@@ -46,10 +46,18 @@
                 <td>{{lineitem.product.name}}</td>
                 <td>{{lineitem.quantity}}</td>
                 <td>{{lineitem.product.price}}</td>
-                <td>{{lineitem.product.price * lineitem.quantity}}</td>                
+                <td>{{lineitem.product.price * lineitem.quantity}}</td>
+                <a routerLink='/line-item/edit/{{lineitem.id}}'>
+                    <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Line Item'>
+                </a>
+                |
+                <button (click)="delete(lineitem.id)" style="border:none;">
+                    <img width='15' height='20'src="assets/delete.jpg" title="Delete Line Item">
+                </button>
             </tr>
+            <span>
+                <button (click)="submitForReview()" class="btn btn-sm btn-primary">Submit For Review</button>
+              </span>     
         </tbody>
-
     </table>
-        
-</div> 
+</div>

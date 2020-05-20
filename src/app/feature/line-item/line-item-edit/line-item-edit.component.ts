@@ -17,6 +17,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LineItemEditComponent implements OnInit {
   title: string = "Purchase Request Line Item Edit";
   request: Request = null;
+  lineitemId: number;
   requestId: number;
   products: Product [] = [];
   lineitem: LineItem = new LineItem();
@@ -33,16 +34,16 @@ export class LineItemEditComponent implements OnInit {
     this.productSvc.list().subscribe(jr => {
       this.products = jr.data as Product[];
     });
-    this.route.params.subscribe(parms => this.requestId = parms['id']);
-    this.requestSvc.get(this.requestId).subscribe(jr => {
-      this.request = jr.data as Request;
-      this.lineitem.request = this.request;
-    });
+    this.route.params.subscribe(parms => this.lineitemId = parms['id']);    
+    this.lineitemSvc.get(this.lineitemId).subscribe(jr => {
+      this.lineitem = jr.data as LineItem;
+      this.requestId = this.lineitem.request.id;
+      });
   }
   save() {
     this.lineitemSvc.edit(this.lineitem).subscribe(jr => {
       if (jr.errors == null) {
-        this.router.navigateByUrl("/request/request-lines/"+ this.requestId);
+        this.router.navigateByUrl("/request/request-lines");
         console.log("Line Item Updated", this.lineitem)
       }
       else {

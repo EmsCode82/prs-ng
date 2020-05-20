@@ -15,6 +15,9 @@ export class LineItemService {
     private http: HttpClient
     ) { }
 
+  get(id: number): Observable<JsonResponse> {
+    return this.http.get(url+id) as Observable<JsonResponse>;
+  } 
   list(): Observable<JsonResponse> {
     return this.http.get(url) as Observable<JsonResponse>;
   }   

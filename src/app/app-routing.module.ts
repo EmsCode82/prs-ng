@@ -26,6 +26,7 @@ import { LineItemCreateComponent } from './feature/line-item/line-item-create/li
 import { LineItemEditComponent } from './feature/line-item/line-item-edit/line-item-edit.component';
 
 
+
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},  
   {path: 'home', component: HomeComponent}, 
@@ -49,7 +50,7 @@ const routes: Routes = [
   {path: 'request/edit/:id', component: RequestEditComponent},
   {path: 'request/request-lines/:id', component: RequestLinesComponent},
   {path: 'request-review/review', component: RequestReviewComponent},
-  {path: 'request-approve-reject/approve-reject', component: RequestApproveRejectComponent},
+  {path: 'request-approve-reject/approve-reject/:id', component: RequestApproveRejectComponent},
   {path: 'line-item/create/:id', component: LineItemCreateComponent},
   {path: 'line-item/edit/:id', component: LineItemEditComponent},         
   {path: '**', component: HomeComponent}

@@ -40,9 +40,13 @@ export class RequestService {
     listInReviewNotLoggedIn(id: number) {
       console.log("List of request under review", id);
       return this.http.get(url+"list-review/"+id) as Observable<JsonResponse>
-    }
+    }        
     approve(request: Request) {
       console.log("Approve Request");
       return this.http.put(url+"/approve",request) as Observable<JsonResponse>
+    }
+    reject(request: Request) {
+      console.log("Reject Request");
+      return this.http.put(url+"/reject",request) as Observable<JsonResponse>
     }
   }

@@ -1,27 +1,23 @@
 <section class='heading'>
     <span class='page-title font-weight-bold font-italic'>[{{title}}]</span>
-    <span> | <a routerLink="/request-review/review">Return to List</a></span>
+    <span><a routerLink="/request-review/review">Return to List</a></span>
 </section>
-    <table class="table table-sm">
-        <thead style="font-weight: bold;">
-            <th>Id</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Total</th>
-        </thead>
-        <tbody *ngFor="let request of request">
-            <td>{{request.id}}</td>
-            <td>{{request.description}}</td>
-            <td>{{request.status}}</td>
-            <td>{{request.total}}</td>
-        </tbody>
-    </table>
-    <span>
-        <button (click)="approve()" class="btn btn-sm btn-primary">Approve</button>
-    </span>
+<table *ngIf="request" class="table table-sm">
+    <tr style="font-weight: bold;">
+        <td>Id</td>
+        <td>Description</td>
+        <td>Status</td>
+        <td>Total</td>
+    </tr>
+    <tr>
+        <td>{{request.id}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total | currency}}</td>
+</table>
 <section class='heading'>
-     <span class='page-title font-weight-bold font-italic'>[{{title2}}]</span>    
-</section> 
+    <span class='page-title font-weight-bold font-italic'>[{{title2}}]</span>
+</section>
 <table *ngIf='lineitems' class="table table=sm table-striped">
     <thead>
         <tr>
@@ -29,11 +25,10 @@
             <th>Product</th>
             <th>Quantity</th>
             <th>Price</th>
-            <th>Line Total</th>
-            <th>Action</th>
+            <th>Line Total</th>            
         </tr>
     </thead>
-    <tbody>      
+    <tbody>
         <tr *ngFor='let lineitem of lineitems'>
             <td>{{lineitem.id}}</td>
             <td>{{lineitem.product.name}}</td>
@@ -42,3 +37,12 @@
             <td>{{lineitem.product.price * lineitem.quantity | currency}}</td>
         </tr>
     </tbody>
+    <span>
+        <button (click)="approve()" class="btn btn-sm btn-primary">Approve</button>
+    </span>
+    <span>
+        <button (click)="reject()" class="btn btn-sm btn-danger">Reject</button>
+    </span>
+    <span>
+        <input value="Reason For Rejection" type="text">
+    </span>

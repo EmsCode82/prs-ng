@@ -43,7 +43,7 @@ export class LineItemEditComponent implements OnInit {
   save() {
     this.lineitemSvc.edit(this.lineitem).subscribe(jr => {
       if (jr.errors == null) {
-        this.router.navigateByUrl("/request/request-lines");
+        this.router.navigateByUrl("/request/request-lines/"+this.requestId);
         console.log("Line Item Updated", this.lineitem)
       }
       else {

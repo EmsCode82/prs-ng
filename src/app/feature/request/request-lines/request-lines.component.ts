@@ -30,7 +30,7 @@ export class RequestLinesComponent implements OnInit {
   ngOnInit(): void {
     this.sysSvc.checkLogin();
     this.loggedInUser = this.sysSvc.loggedInUser;
-    this.route.params.subscribe(parms => this.requestId = parms["id"]);    
+    this.route.params.subscribe(parms => this.requestId = parms["id"]); 
     // call the new lines-for-pr method to get the line items for the request
     this.lineitemSvc.linesforpr(this.requestId).subscribe(jr => {
       this.lineitems = jr.data as LineItem[];
@@ -68,8 +68,8 @@ export class RequestLinesComponent implements OnInit {
         this.router.navigateByUrl("/request/list");
       }
       else {
-        console.log("***Error submitting request.", this.request, jr.errors);
+        console.log("***Error submitting request for review.", this.request, jr.errors);
       }
-    })
+    });
   }
 }

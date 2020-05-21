@@ -21,7 +21,7 @@ export class RequestDetailComponent implements OnInit {
     this.requestSvc.get(this.requestId).subscribe((jr) => {
       this.request = jr.data as Request;
       console.log('Request found!', this.request)
-    })
+    });
   }
   delete() {
     this.requestSvc.delete(this.requestId).subscribe((jr) => {

@@ -1,0 +1,29 @@
+<section class='heading'>
+    <span class='page-title font-weight-bold font-italic'>[{{title}}]</span>
+</section>
+<table *ngIf="requests" class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>User Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let request of requests">
+            <td>{{ request.user.id }}</td>
+            <td>{{ request.user.userName }} </td>
+            <td>{{ request.description }}</td>
+            <td>{{ request.status }}</td>
+            <td>{{ request.total }}</td>
+            <td>
+                <a routerLink='/request-approve-reject/approve-reject/{{request.id}}'>
+                    <img width='20' height='20' src='assets/review.png' title='Approve/Reject'>
+                </a>                
+            </td>
+        </tr>
+    </tbody>
+</table>

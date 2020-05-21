@@ -26,6 +26,8 @@ import { RequestDetailComponent } from './feature/request/request-detail/request
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
+import { RequestReviewComponent } from './feature/request-review/request-review.component';
+import { RequestApproveRejectComponent } from './feature/request-approve-reject/request-approve-reject.component';
 import { LineItemCreateComponent } from './feature/line-item/line-item-create/line-item-create.component';
 import { LineItemEditComponent } from './feature/line-item/line-item-edit/line-item-edit.component';
 
@@ -52,7 +54,9 @@ import { LineItemEditComponent } from './feature/line-item/line-item-edit/line-i
     RequestDetailComponent,
     RequestCreateComponent,
     RequestEditComponent,
-    RequestLinesComponent,
+    RequestLinesComponent,    
+    RequestReviewComponent,
+    RequestApproveRejectComponent,
     LineItemCreateComponent,
     LineItemEditComponent,
     

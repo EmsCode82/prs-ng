@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { JsonResponse } from '../model/json-response.class';
 import { Request } from '../model/request.class';
 
+
 const url: string = "http://localhost:8080/requests/";
 
 @Injectable({
@@ -33,7 +34,15 @@ export class RequestService {
       return this.http.delete(url+id) as Observable<JsonResponse>;
     } 
     submitForReview(request: Request) {
-      console.log("submit for review");
-      return this.http.put(url,+"submit-review") as Observable<JsonResponse>;
+      console.log("submitted for review", request);
+      return this.http.put(url+"/submit-review",request) as Observable<JsonResponse>;
+    }
+    listInReviewNotLoggedIn(id: number) {
+      console.log("List of request under review", id);
+      return this.http.get(url+"list-review/"+id) as Observable<JsonResponse>
+    }
+    approve(request: Request) {
+      console.log("Approve Request");
+      return this.http.put(url+"/approve",request) as Observable<JsonResponse>
     }
   }

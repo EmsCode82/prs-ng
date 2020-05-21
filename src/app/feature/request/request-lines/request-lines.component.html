@@ -5,11 +5,11 @@
     </section>
     <main class="single">
         <table class="table table-sm">
-            <tr>
-                <b><td>Request Id</td></b>
-                <b><td>Description</td></b>
-                <b><td>Status</td></b>
-                <b><td>Total</td></b>
+            <tr style="font-weight: bold;">
+                <td>Request Id</td>
+                <td>Description</td>
+                <td>Status</td>
+                <td>Total</td>
             </tr>
             <tr>
                 <td>{{request.id}}</td>
@@ -57,7 +57,7 @@
             </tr>
             <span>
                 <button (click)="submitForReview()" class="btn btn-sm btn-primary">Submit For Review</button>
-              </span>     
+            </span>     
         </tbody>
     </table>
 </div>

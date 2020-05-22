@@ -1,13 +1,14 @@
+<img class="iimg" src="assets/bbbbb.jpg" width=100%>
 <section class='heading'>
     <span class='page-title font-weight-bold font-italic'>[{{title}}]</span>
     <span><a routerLink="/request-review/review">Return to List</a></span>
 </section>
-<table *ngIf="request" class="table table-sm">
+<table *ngIf="request" class="table table-sm bold">
     <tr style="font-weight: bold;">
-        <td>Id</td>
-        <td>Description</td>
-        <td>Status</td>
-        <td>Total</td>
+        <td class="d">Id</td>
+        <td class="d">Description</td>
+        <td class="d">Status</td>
+        <td class="d">Total</td>
     </tr>
     <tr>
         <td>{{request.id}}</td>
@@ -18,14 +19,14 @@
 <section class='heading'>
     <span class='page-title font-weight-bold font-italic'>[{{title2}}]</span>
 </section>
-<table *ngIf='lineitems' class="table table=sm table-striped">
+<table *ngIf='lineitems' class="table table=sm table-striped bold">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Line Total</th>            
+            <th class="h">ID</th>
+            <th class="h">Product</th>
+            <th class="h">Quantity</th>
+            <th class="h">Price</th>
+            <th class="h">Line Total</th>            
         </tr>
     </thead>
     <tbody>
@@ -41,8 +42,11 @@
         <button (click)="approve()" class="btn btn-sm btn-primary">Approve</button>
     </span>
     <span>
-        <button (click)="reject()" class="btn btn-sm btn-danger">Reject</button>
+        <button type="submit" [disabled]="!request.reasonForRejection" class="btn btn-danger" (click)="reject()">Reject</button>
     </span>
+    <br>
+    <br>
     <span>
-        <input value="Reason For Rejection" type="text">
+        <input type="text" class="form-control" [(ngModel)]="request.reasonForRejection"
+        id="request" placeholder="Reason For Rejection">
     </span>

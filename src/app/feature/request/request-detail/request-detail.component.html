@@ -1,10 +1,11 @@
+<img class="iimg" src="/assets/blueee.jpg">
 <div *ngIf="request" class="component">
     <section class="heading">
         <span class="page-title front weight-bold font-italic">{{ title }}</span>
         <span> | <a routerLink="/request/list">Return to List</a></span>
     </section>
     <main class="single">
-        <table class="table table-sm">
+        <table class="table table-sm bold">
             <tr>
                 <td>ID</td>
                 <td>{{ request.user.id }}</td>

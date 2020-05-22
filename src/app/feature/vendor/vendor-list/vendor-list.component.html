@@ -1,10 +1,12 @@
+<img class="iimg" src="assets/12.jpg" width=100%>
 <section class='heading'>
     <span class='page-title font-weight-bold font-italic'>[{{title}}]</span>
     <a routerLink='/vendor/create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
    </a>
+   <span> | <a routerLink="/welcome">Home</a></span>
 </section>
-<table *ngIf="vendors" class="table table-sm table-striped">
+<table *ngIf="vendors" class="table table-sm table-striped, bold">
     <thead>
         <tr>
             <th>ID</th>
@@ -16,6 +18,7 @@
             <th>Zip</th>
             <th>Phone Number</th>
             <th>Email</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>

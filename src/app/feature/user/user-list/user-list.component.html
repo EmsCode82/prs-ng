@@ -1,28 +1,29 @@
+<img class="iimg" src="assets/userss.jpg" width=100%>
 <section class='heading'>
     <span class='page-title font-weight-bold font-italic'>[{{title}}]</span>
     <a routerLink='/user/create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
-   </a>
+    </a>
+    <span> | <a routerLink="/welcome">Home</a></span>
 </section>
 <table *ngIf="users" class="table table-sm table-striped">
     <thead>
         <tr>
             <th>ID</th>
-            <th>User Name</th>
-            <th>Password</th>
+            <th>User Name</th>            
             <th>First Name</th>
             <th>Last Name</th>
             <th>Phone Number</th>
             <th>Email</th>
             <th>Reviewer</th>
             <th>Admin</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of users">
+        <tr class="bold" *ngFor="let user of users">
             <td>{{ user.id }}</td>
-            <td>{{ user.userName }}</td>
-            <td>{{ user.password }}</td>
+            <td>{{ user.userName }}</td>            
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>
             <td>{{ user.phoneNumber }}</td>

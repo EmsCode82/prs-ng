@@ -1,17 +1,20 @@
+<img class="iimg" src="/assets/blueee.jpg">
 <section class='heading'>
     <span class='page-title font-weight-bold font-italic'>[{{title}}]</span>
     <a routerLink='/request/create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
    </a>
+   <span> | <a routerLink="/welcome">Home</a></span>
 </section>
-<table *ngIf="requests" class="table table-sm table-striped">
+<table *ngIf="requests" class="table table-sm table-striped bold">
     <thead>
         <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>User Name</th>
             <th>Description</th>            
             <th>Status</th>
-            <th>Total</th>            
+            <th>Total</th>
+            <th>Action</th>           
         </tr>
     </thead>
     <tbody>

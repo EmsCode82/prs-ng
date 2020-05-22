@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product.class';
 import { ProductService } from 'src/app/service/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Vendor } from 'src/app/model/vendor.class';
+import { VendorService } from 'src/app/service/vendor.service';
 
 @Component({
   selector: 'app-product-edit',
@@ -13,8 +15,10 @@ export class ProductEditComponent implements OnInit {
   submitBtnTitle: string = "Edit"
   product: Product = new Product();
   productId: number = 0;
+  vendors: Vendor[] = [];
 
   constructor(private productSvc: ProductService,
+    private vendorSvc: VendorService,
     private router: Router,
     private route: ActivatedRoute) { }
 
@@ -22,6 +26,10 @@ export class ProductEditComponent implements OnInit {
     this.route.params.subscribe(parms => this.productId = parms["id"]);
     this.productSvc.get(this.productId).subscribe(jr => {
       this.product = jr.data as Product;
+    });
+    this.vendorSvc.list().subscribe(jr => {
+      this.vendors = jr.data as Vendor[];
+      //grab list of vendors
     });
   }
   save() {

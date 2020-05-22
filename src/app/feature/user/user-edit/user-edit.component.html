@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <img class="iimg" src="assets/whiteab.jpg" width=100%>
 <div *ngIf="user" class="component">
     <section class="heading">
@@ -12,7 +13,7 @@
             <input [(ngModel)]="user.userName" class="rounded" type="text" />
           </td>
         </tr>
-        <tr ng-disabled="!loggedInUser">
+        <tr>
           <td>Password:</td>
           <td>
             <input [(ngModel)]="user.password" class="rounded" type="text" />

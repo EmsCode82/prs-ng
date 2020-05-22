@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <img class="iimg" src="/assets/bluuu.jpg">
 <div *ngIf="product" class="component">
     <section class="heading">
@@ -9,7 +10,9 @@
         <tr>
           <td>Vendor:</td>
           <td>
-            <input [(ngModel)]="product.vendor.name" class="rounded" type="text" />
+            <select [(ngModel)]="product.vendor" class="rounded">
+              <option *ngFor="let vendor of vendors" [ngValue]='vendor'>{{vendor.name}}</option>
+            </select>
           </td>
         </tr>
         <tr>

@@ -9,8 +9,7 @@
 </section>
 <table *ngIf="vendors" class="table table-sm table-striped, bold">
     <thead>
-        <tr>
-            <th>ID</th>
+        <tr>            
             <th>Code</th>
             <th>Name</th>
             <th>Address</th>
@@ -23,8 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let vendor of vendors">
-            <td>{{ vendor.id }}</td>
+        <tr *ngFor="let vendor of vendors">            
             <td>{{ vendor.code }}</td>
             <td>{{ vendor.name }}</td>
             <td>{{ vendor.address }}</td>

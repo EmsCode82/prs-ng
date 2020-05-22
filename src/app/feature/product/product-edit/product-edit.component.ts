@@ -43,4 +43,7 @@ export class ProductEditComponent implements OnInit {
       }
     });
   }
+  compVendor(a: Vendor, b: Vendor): boolean {
+    return a && b && a.id === b.id;
+  }
 }

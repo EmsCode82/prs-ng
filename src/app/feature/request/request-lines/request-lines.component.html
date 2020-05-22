@@ -17,7 +17,7 @@
                 <td>{{request.id}}</td>
                 <td>{{request.description}}</td>
                 <td>{{request.status}}</td>
-                <td>{{request.total}}</td>
+                <td>{{request.total | currency}}</td>
             </tr>
         </table>
     </main>
@@ -33,7 +33,7 @@
     <table *ngIf='request' class="table table=sm table-striped bold">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Line Item ID</th>
                 <th>Product</th>
                 <th>Quantity</th>
                 <th>Price</th>

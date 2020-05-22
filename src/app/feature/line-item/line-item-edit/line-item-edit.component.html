@@ -9,7 +9,7 @@
       <tr>
         <td>Product:</td>
         <td>
-          <select [(ngModel)]="lineitem.product" class="rounded">
+          <select [(ngModel)]="lineitem.product" class="rounded" [compareWith]= "compProduct">
             <option *ngFor="let product of products" [ngValue]='product'>{{product.name}}</option>
           </select>
         </td>

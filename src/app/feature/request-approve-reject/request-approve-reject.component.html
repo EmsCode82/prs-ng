@@ -35,7 +35,7 @@
             <td>{{lineitem.id}}</td>
             <td>{{lineitem.product.name}}</td>
             <td>{{lineitem.quantity}}</td>
-            <td>{{lineitem.product.price}}</td>
+            <td>{{lineitem.product.price | currency}}</td>
             <td>{{lineitem.product.price * lineitem.quantity | currency}}</td>
         </tr>
     </tbody>

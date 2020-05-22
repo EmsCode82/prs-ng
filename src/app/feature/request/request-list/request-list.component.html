@@ -9,8 +9,7 @@
 </section>
 <table *ngIf="requests" class="table table-sm table-striped bold">
     <thead>
-        <tr>
-            <th>ID</th>
+        <tr>            
             <th>User Name</th>
             <th>Description</th>            
             <th>Status</th>
@@ -19,12 +18,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let request of requests">
-            <td>{{ request.user.id }}</td>
+        <tr *ngFor="let request of requests">            
             <td>{{ request.user.userName }} </td>
             <td>{{ request.description }}</td>            
             <td>{{ request.status }}</td>            
-            <td>{{ request.total }}</td>            
+            <td>{{ request.total | currency}}</td>            
             <td>
                 <a routerLink='/request/detail/{{request.id}}'>
                     <img width='20' height='20' src='assets/details.png' title='Request Details'>
